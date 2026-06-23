@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: learning-practice-prod
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/learning  # Default: "jdbc:mysql://localhost:3306/mydb"
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl  # Default Hibernate strategy
+    show-sql: true
+
+server:
+  servlet:
+    context-path: /prod
+
+
+jwt:
+  secret: "[a-zA-Z0-09._]^+$SecretKeyForJWTtokenwecanGenratethekeyasperourwishyoucanaddsymbolsAlso!!!!LearningFullStack"

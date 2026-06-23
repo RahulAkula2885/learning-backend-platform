@@ -1,0 +1,76 @@
+spring:
+  application:
+    name: learning-practice-docker
+
+  datasource:
+    url: jdbc:mysql://host.docker.internal:3306/learning
+    username: root
+    password: ${DB_PASSWORD:ABCD@12}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: noreplyrahulrao@gmail.com
+    password: ${MAIL_PASSWORD:ABCD@12}
+    protocol: smtp
+
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+
+cloud:
+  aws:
+    credentials:
+      access-key: abcd
+      secret-key: abcd
+    region:
+      static: ap-south-1
+    stack:
+      auto: false
+
+
+server:
+  servlet:
+    context-path: /dev
+
+jwt:
+  secret: ${JWT_SECRET:secret}
+
+aes:
+  secret: "QmFzZTY0RW5jb2RlZEtleTEyMzQ1Ng=="
+  algorithm: "AES"
+
+
+
+# Use this configuration when you want logs to be written to a fixed log file.
+# If you need dynamic log files (for example, daily log files with the current date),
+# create a logback-spring.xml (or logback.xml) configuration and define the
+# rolling policy there.
+
+#logging:
+#  level:
+#    root: INFO
+#  file:
+#    name: logs/applicationlogs.log

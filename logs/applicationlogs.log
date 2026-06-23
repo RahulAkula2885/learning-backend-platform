@@ -1,0 +1,92 @@
+2026-06-16T10:17:25.690+05:30  INFO 23478 --- [learning-practice-dev] [main] in.rahul.learning.LearningApplication    : Starting LearningApplication using Java 21.0.9 with PID 23478 (/Users/rahul/coding-practice/java/learning/target/classes started by rahul in /Users/rahul/coding-practice/java/learning)
+2026-06-16T10:17:25.693+05:30  INFO 23478 --- [learning-practice-dev] [main] in.rahul.learning.LearningApplication    : The following 1 profile is active: "dev"
+2026-06-16T10:17:26.448+05:30  INFO 23478 --- [learning-practice-dev] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-16T10:17:26.515+05:30  INFO 23478 --- [learning-practice-dev] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2026-06-16T10:17:26.933+05:30  INFO 23478 --- [learning-practice-dev] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-06-16T10:17:26.968+05:30  INFO 23478 --- [learning-practice-dev] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T10:17:26.969+05:30  INFO 23478 --- [learning-practice-dev] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-16T10:17:27.019+05:30  INFO 23478 --- [learning-practice-dev] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1293 ms
+2026-06-16T10:17:27.213+05:30  INFO 23478 --- [learning-practice-dev] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-16T10:17:27.235+05:30  INFO 23478 --- [learning-practice-dev] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-06-16T10:17:27.419+05:30  INFO 23478 --- [learning-practice-dev] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-16T10:17:27.435+05:30  INFO 23478 --- [learning-practice-dev] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-16T10:17:27.661+05:30  INFO 23478 --- [learning-practice-dev] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@631678e6
+2026-06-16T10:17:27.663+05:30  INFO 23478 --- [learning-practice-dev] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-16T10:17:27.711+05:30  INFO 23478 --- [learning-practice-dev] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/learning]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: learning/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-16T10:17:28.363+05:30  INFO 23478 --- [learning-practice-dev] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-16T10:17:28.412+05:30  INFO 23478 --- [learning-practice-dev] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16T10:17:28.510+05:30  INFO 23478 --- [learning-practice-dev] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-16T10:17:29.002+05:30  WARN 23478 --- [learning-practice-dev] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-16T10:17:29.056+05:30  WARN 23478 --- [learning-practice-dev] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 36dd3715-daa4-4208-a5a2-a628c918e80b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-16T10:17:29.059+05:30  INFO 23478 --- [learning-practice-dev] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-16T10:17:29.610+05:30  INFO 23478 --- [learning-practice-dev] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/dev'
+2026-06-16T10:17:29.623+05:30  INFO 23478 --- [learning-practice-dev] [main] in.rahul.learning.LearningApplication    : Started LearningApplication in 4.395 seconds (process running for 4.833)
+2026-06-16T10:17:29.625+05:30  WARN 23478 --- [learning-practice-dev] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-16T10:17:29.626+05:30  WARN 23478 --- [learning-practice-dev] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-16T10:18:01.330+05:30  INFO 23478 --- [learning-practice-dev] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T10:18:01.342+05:30  INFO 23478 --- [learning-practice-dev] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-16T10:18:01.350+05:30  INFO 23478 --- [learning-practice-dev] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16T10:18:01.353+05:30  INFO 23478 --- [learning-practice-dev] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-16T10:18:01.366+05:30  INFO 23478 --- [learning-practice-dev] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-16T10:18:03.717+05:30  INFO 23486 --- [learning-practice-dev] [main] in.rahul.learning.LearningApplication    : Starting LearningApplication using Java 21.0.9 with PID 23486 (/Users/rahul/coding-practice/java/learning/target/classes started by rahul in /Users/rahul/coding-practice/java/learning)
+2026-06-16T10:18:03.720+05:30  INFO 23486 --- [learning-practice-dev] [main] in.rahul.learning.LearningApplication    : The following 1 profile is active: "dev"
+2026-06-16T10:18:04.485+05:30  INFO 23486 --- [learning-practice-dev] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-16T10:18:04.545+05:30  INFO 23486 --- [learning-practice-dev] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interface.
+2026-06-16T10:18:04.961+05:30  INFO 23486 --- [learning-practice-dev] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-06-16T10:18:04.994+05:30  INFO 23486 --- [learning-practice-dev] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T10:18:04.995+05:30  INFO 23486 --- [learning-practice-dev] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-16T10:18:05.043+05:30  INFO 23486 --- [learning-practice-dev] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1288 ms
+2026-06-16T10:18:05.234+05:30  INFO 23486 --- [learning-practice-dev] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-16T10:18:05.255+05:30  INFO 23486 --- [learning-practice-dev] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-06-16T10:18:05.434+05:30  INFO 23486 --- [learning-practice-dev] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-16T10:18:05.450+05:30  INFO 23486 --- [learning-practice-dev] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-16T10:18:05.662+05:30  INFO 23486 --- [learning-practice-dev] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@81dfdee
+2026-06-16T10:18:05.663+05:30  INFO 23486 --- [learning-practice-dev] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-16T10:18:05.708+05:30  INFO 23486 --- [learning-practice-dev] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/learning]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: learning/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-16T10:18:06.370+05:30  INFO 23486 --- [learning-practice-dev] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-16T10:18:06.407+05:30  INFO 23486 --- [learning-practice-dev] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16T10:18:06.504+05:30  INFO 23486 --- [learning-practice-dev] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-16T10:18:06.984+05:30  WARN 23486 --- [learning-practice-dev] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-16T10:18:07.036+05:30  WARN 23486 --- [learning-practice-dev] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 97bf8240-3ea7-4900-b8b0-a3a736c951b0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-16T10:18:07.039+05:30  INFO 23486 --- [learning-practice-dev] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-16T10:18:07.354+05:30  INFO 23486 --- [learning-practice-dev] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/dev'
+2026-06-16T10:18:07.362+05:30  INFO 23486 --- [learning-practice-dev] [main] in.rahul.learning.LearningApplication    : Started LearningApplication in 4.145 seconds (process running for 4.593)
+2026-06-16T10:18:07.364+05:30  WARN 23486 --- [learning-practice-dev] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-16T10:18:07.364+05:30  WARN 23486 --- [learning-practice-dev] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-16T10:36:31.753+05:30  INFO 23486 --- [learning-practice-dev] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T10:36:31.772+05:30  INFO 23486 --- [learning-practice-dev] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-16T10:36:31.782+05:30  INFO 23486 --- [learning-practice-dev] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-16T10:36:31.788+05:30  INFO 23486 --- [learning-practice-dev] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-16T10:36:31.797+05:30  INFO 23486 --- [learning-practice-dev] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
