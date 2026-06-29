@@ -27,6 +27,7 @@ import java.util.List;
  * - Fetch User By ID
  * - Login
  */
+@CrossOrigin(origins = "http://localhost:3000")
 @Slf4j
 @RestController
 @RequiredArgsConstructor

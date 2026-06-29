@@ -17,7 +17,7 @@ spring:
 
     # Database credentials (avoid hardcoding in production)
     username: root
-    password: ${DB_PASSWORD:ABCD@12}
+    password: ${DB_PASSWORD:password1}
 
     # MySQL JDBC driver
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -55,7 +55,7 @@ spring:
     # Gmail SMTP credentials
     # NOTE: In production, use environment variables or secret manager
     username: noreplyrahulrao@gmail.com
-    password: ${MAIL_PASSWORD:ABCD@12}
+    password: ${MAIL_PASSWORD:password}
 
     protocol: smtp
 
@@ -82,6 +82,23 @@ spring:
       # Maximum request size (all files combined)
       max-request-size: 100MB
 
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: clientid
+            client-secret: clientsecret
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
 
 # =========================
 # AWS CONFIGURATION (S3 / SDK etc.)
@@ -129,6 +146,8 @@ aes:
 
   # Encryption algorithm used
   algorithm: "AES"
+
+
 
 
 # =========================

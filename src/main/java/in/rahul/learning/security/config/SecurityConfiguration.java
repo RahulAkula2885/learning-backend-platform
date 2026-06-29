@@ -27,8 +27,12 @@ public class SecurityConfiguration {
     protected static final String[] PUBLIC_URLS = {
 
             // login
-            "/dev/learn/login/**",
-            "/learn/login/**",
+            "/dev/api/v1/users/login/**",
+            "/api/v1/users/login/**",
+
+            //signip
+            "/dev/api/v1/users/create/**",
+            "/api/v1/users/create/**",
 
             // swagger ui
             "/swagger-ui.html",
@@ -64,6 +68,7 @@ public class SecurityConfiguration {
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(PUBLIC_URLS).permitAll()
+                        //.requestMatchers("/api/v1/users").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 ).addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling(ex ->

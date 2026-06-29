@@ -20,7 +20,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import static in.rahul.learning.commons.CommonMessages.SUCCESS;
@@ -57,11 +59,19 @@ public class UserServiceImpl implements IUserService {
 
         userServiceCache.saveUsers(user);
 
-        return ResponseEntity.ok(BaseResponse.builder()
+        UserPrinciple userPrinciple = new UserPrinciple(user, Set.of(user.getRole()));
+        String token = jwtTokenProvider.generateJWTToken(userPrinciple);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add(JWT_TOKEN_HEADER, token);
+
+        BaseResponse baseResponse = BaseResponse.builder()
                 .status(200)
                 .message(SUCCESS)
                 .timestamp(Instant.now())
-                .build());
+                .build();
+
+        return ResponseEntity.ok().headers(headers).body(baseResponse);
     }
 
     @Override
@@ -75,6 +85,7 @@ public class UserServiceImpl implements IUserService {
                 .message(SUCCESS)
                 .timestamp(Instant.now())
                 .build());
+
     }
 
     @Override
@@ -111,10 +122,14 @@ public class UserServiceImpl implements IUserService {
         HttpHeaders headers = new HttpHeaders();
         headers.add(JWT_TOKEN_HEADER, token);
 
+        Map<Object, Object> map = new HashMap<>();
+        map.put("response",userResponse);
+        map.put(JWT_TOKEN_HEADER,token);
+
         BaseResponse baseResponse = BaseResponse.builder()
                 .status(200)
                 .message(SUCCESS)
-                .data(userResponse)
+                .data(map)
                 .timestamp(Instant.now())
                 .build();
 

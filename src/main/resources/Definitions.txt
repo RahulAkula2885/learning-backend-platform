@@ -125,5 +125,45 @@ Shutdown:-
 15. DisposableBean.destroy()
 16. Custom destroy-method
 # -------------------------------------------------------------------------------------------------------------
+#   SECURITY
+# -------------------------------------------------------------------------------------------------------------
+Login → JWT created
+   ↓
+Request with token
+   ↓
+JWT Filter runs
+   ↓
+Extract username + roles
+   ↓
+Create Authentication object
+   ↓
+Store in SecurityContext
+   ↓
+Controller + hasRole() checks it
+
+1. SecurityContextHolder = memory holder
+    This is a class that stores security info using:
+
+    ThreadLocal (per request memory)
+
+    👉 Meaning:
+    Each HTTP request gets its own isolated security data.
+
+2. @PreAuthorize("hasRole('ADMIN')")
+           ↓
+   Spring Security Expression Handler
+           ↓
+   SecurityContextHolder.getContext()
+           ↓
+   Authentication object
+           ↓
+   getAuthorities()
+           ↓
+   Check for ROLE_ADMIN
+           ↓
+   ALLOW / DENY
+
+
+# -------------------------------------------------------------------------------------------------------------
 #
 # -------------------------------------------------------------------------------------------------------------
