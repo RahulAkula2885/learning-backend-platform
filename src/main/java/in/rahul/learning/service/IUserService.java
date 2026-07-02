@@ -20,4 +20,6 @@ public interface IUserService {
     UserResponse getUserDetailsById(Long id);
 
     ResponseEntity<BaseResponse> login(LoginRequest request);
+
+    ResponseEntity<BaseResponse> deleteUser(User request);
 }

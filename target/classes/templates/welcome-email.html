@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+
+<body style="margin:0;padding:0;background:#f4f6f9;font-family:Arial,Helvetica,sans-serif;">
+
+<div style="max-width:90%;margin:40px auto;background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+
+    <!-- Header -->
+    <div style="background:#203E7B;padding:30px;text-align:center;">
+        <h1 style="margin:0;color:#ffffff;">
+            Welcome! 🎉
+        </h1>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:35px;">
+
+        <h2 style="color:#203E7B;">
+            Hello {name},
+<!--            <span th:text="${name}"></span>,-->
+        </h2>
+
+        <p style="color:#555;line-height:1.8;">
+            Thank you for signing up! We're delighted to welcome you to our platform.
+        </p>
+
+        <p style="color:#555;line-height:1.8;">
+            Your account has been created successfully, and you can now start exploring all the features available to you. We hope you have a smooth and enjoyable experience.
+        </p>
+
+        <p style="color:#555;line-height:1.8;">
+            Below are your registered account details:
+        </p>
+
+        <table style="width:100%;border-collapse:collapse;margin:25px 0;">
+            <tr>
+                <td style="padding:10px;font-weight:bold;">Name</td>
+                <td>{name}</td>
+            </tr>
+
+            <tr>
+                <td style="padding:10px;font-weight:bold;">Email</td>
+                <td> {email}</td>
+            </tr>
+
+            <tr>
+                <td style="padding:10px;font-weight:bold;">Phone</td>
+                <td> {phone}</td>
+            </tr>
+        </table>
+
+        <p style="color:#555;line-height:1.8;">
+            We encourage you to explore the platform and make the most of the available features. If you have any questions or need assistance, we're always happy to help.
+        </p>
+
+        <!-- Support Section -->
+        <div style="margin:30px 0;padding:20px;background:#f8f9fa;border-left:4px solid #203E7B;border-radius:5px;">
+            <h3 style="margin-top:0;color:#203E7B;">Need Help?</h3>
+
+            <p style="margin:8px 0;color:#555;">
+                <strong>Email:</strong>
+                <a href="mailto:rahulakula2015@gmail.com"
+                   style="color:#203E7B;text-decoration:none;">
+                    rahulakula2015@gmail.com
+                </a>
+            </p>
+
+            <p style="margin:8px 0;color:#555;">
+                <strong>Phone:</strong>
+                <a href="tel:+919963178796"
+                   style="color:#203E7B;text-decoration:none;">
+                    +91 99631 78796
+                </a>
+            </p>
+
+            <p style="margin:8px 0;color:#555;">
+                Our support team will be happy to assist you with any questions, technical issues, or feedback. We're committed to providing timely assistance whenever you need it.
+            </p>
+        </div>
+
+        <p style="color:#555;line-height:1.8;">
+            Thank you for choosing our platform. We appreciate your trust and look forward to being part of your learning and development journey.
+        </p>
+
+        <p style="margin-top:35px;color:#555;">
+            Best Regards,<br><br>
+            <strong>Support Team</strong>
+        </p>
+
+    </div>
+
+    <!-- Footer -->
+<!--    <div style="background:#f8f9fa;margin:30px;padding:20px;text-align:center;color:#777;font-size:13px;border-top:1px solid #e5e7eb;">-->
+<!--        © 2026. All rights reserved.-->
+<!--        <br><br>-->
+<!--        This is an automated email sent after your successful registration. Please do not reply to this message.-->
+<!--    </div>-->
+    <!-- Footer -->
+    <div style="background:#f8f9fa;margin:30px;padding:20px;text-align:center;color:#777;font-size:13px;border-top:1px solid #e5e7eb;">
+
+        <!-- Social Icons -->
+        <div style="margin-bottom:10px;">
+
+            <!-- GitHub -->
+            <a href="https://github.com/RahulAkula2885/" target="_blank" style="margin:0 10px;text-decoration:none;">
+                <svg height="22" width="22" viewBox="0 0 24 24" fill="#203E7B" style="vertical-align:middle;">
+                    <path d="M12 .5C5.73.5.75 5.7.75 12.3c0 5.28 3.44 9.75 8.21 11.34.6.12.82-.27.82-.6v-2.1c-3.34.75-4.04-1.65-4.04-1.65-.55-1.45-1.34-1.83-1.34-1.83-1.1-.78.08-.76.08-.76 1.22.09 1.86 1.3 1.86 1.3 1.08 1.9 2.84 1.35 3.53 1.03.11-.8.42-1.35.76-1.66-2.66-.31-5.47-1.37-5.47-6.1 0-1.35.47-2.45 1.24-3.31-.12-.31-.54-1.56.12-3.25 0 0 1.01-.33 3.3 1.26a11.1 11.1 0 0 1 6 0c2.29-1.59 3.3-1.26 3.3-1.26.66 1.69.24 2.94.12 3.25.77.86 1.24 1.96 1.24 3.31 0 4.74-2.81 5.79-5.49 6.1.43.38.81 1.12.81 2.26v3.35c0 .33.22.73.83.6A11.6 11.6 0 0 0 23.25 12.3C23.25 5.7 18.27.5 12 .5z"/>
+                </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/rahul-rao-akula/" target="_blank" style="margin:0 10px;text-decoration:none;">
+                <svg height="22" width="22" viewBox="0 0 24 24" fill="#203E7B" style="vertical-align:middle;">
+                    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H12v2.2h.1c.6-1.1 2.1-2.2 4.3-2.2 4.6 0 5.5 3 5.5 6.9V24h-5v-7.8c0-1.9-.04-4.3-2.6-4.3s-3 2-3 4.2V24h-5V8z"/>
+                </svg>
+            </a>
+
+        </div>
+
+        © 2026. All rights reserved.
+        <br><br>
+        This is an automated email sent after your successful registration. Please do not reply to this message.
+    </div>
+
+</div>
+
+</body>
+</html>

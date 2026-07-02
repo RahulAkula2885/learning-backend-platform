@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e64d6bc-35e4-4b78-9882-a77f689a2b0f" name="Changes" comment="" />
+    <list default="true" id="6e64d6bc-35e4-4b78-9882-a77f689a2b0f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/BllomFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/config/AsyncConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/config/BloomFilterConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/filters/EmailBloomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/mail/service/MailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/mail/utils/MailServiceUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/mail/utils/MailTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome-email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/logging/archive/learning-app.2026-06-27.0.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/logging/archive/learning-app.2026-06-28.0.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/logging/learning-app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logging/learning-app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/controller/DefaultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/controller/DefaultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/exceptions/GlobalExceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/exceptions/GlobalExceptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/model/response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/model/response/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/security/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/security/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/service/cache/UserServiceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/service/cache/UserServiceCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/rahul/learning/service/validations/UserValidations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/rahul/learning/service/validations/UserValidations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-docker-local-mysql.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-docker-local-mysql.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-docker.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,8 +72,11 @@
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "Maven.learning [-N,wrapper:wrapper].executor": "Run",
     "Maven.learning [clean,install].executor": "Run",
+    "Maven.learning [clean,package].executor": "Run",
     "Maven.learning [clean].executor": "Run",
+    "Maven.learning [mvn,clean,install].executor": "Run",
     "Maven.learning [package].executor": "Run",
+    "Maven.learning [validate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -53,7 +85,7 @@
     "Spring Boot.LearningApplicationEnvFiles.executor": "Run",
     "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/rahul/coding-practice/java/learning/src/main/resources",
+    "last_opened_file_path": "/Users/rahul/coding-practice/java/learning",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -76,7 +108,9 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn -N wrapper:wrapper" />
+      <command value="mvn mvn clean install" />
       <command value="mvn clean" />
+      <command value="mvn clean package" />
       <command value="mvn clean install" />
     </option>
   </component>
@@ -190,28 +224,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/in/rahul/learning/exceptions/GlobalExceptions.java</url>
-          <line>113</line>
+          <line>121</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/in/rahul/learning/exceptions/GlobalExceptions.java</url>
-          <line>118</line>
+          <line>126</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/in/rahul/learning/exceptions/GlobalExceptions.java</url>
-          <line>124</line>
+          <line>132</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/in/rahul/learning/exceptions/GlobalExceptions.java</url>
-          <line>151</line>
+          <line>159</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/in/rahul/learning/exceptions/GlobalExceptions.java</url>
-          <line>83</line>
+          <line>84</line>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/in/rahul/learning/service/UserServiceImpl.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/in/rahul/learning/mail/service/MailService.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/in/rahul/learning/mail/service/MailService.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/in/rahul/learning/mail/service/MailService.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="com.fasterxml.jackson.databind.exc.InvalidDefinitionException" package="com.fasterxml.jackson.databind.exc" />
@@ -220,6 +274,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.springframework.security.authorization.AuthorizationDeniedException" package="org.springframework.security.authorization" />
           <option name="timeStamp" value="14" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.dao.DataIntegrityViolationException" package="org.springframework.dao" />
+          <option name="timeStamp" value="32" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

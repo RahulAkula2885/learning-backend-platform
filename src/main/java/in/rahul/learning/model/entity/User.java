@@ -8,7 +8,13 @@ import java.time.Instant;
 
 @Entity
 @Data
-@Table(name = "users")
+@Table(
+        name = "users",
+        indexes = {
+                @Index(name = "idx_user_email", columnList = "email"),
+                @Index(name = "idx_user_phone", columnList = "phone_no")
+        }
+)
 public class User {
 
     @Id

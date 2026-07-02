@@ -1,7 +1,11 @@
 package in.rahul.learning.controller;
 
 import in.rahul.learning.commons.BaseResponse;
+import in.rahul.learning.mail.service.MailService;
+import in.rahul.learning.mail.utils.MailTemplate;
+import in.rahul.learning.model.entity.User;
 import io.swagger.v3.oas.annotations.Hidden;
+import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.webmvc.error.ErrorController;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.UnsupportedEncodingException;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -19,6 +24,10 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 public class DefaultController implements ErrorController {
+
+
+    private final MailService mailService;
+    private final MailTemplate mailTemplate;
 
     private static final String PATH = "/error";
 
@@ -56,6 +65,32 @@ public class DefaultController implements ErrorController {
 
     private void createMethod(int... arr) {
         System.out.println("Array: " + Arrays.toString(arr));
+    }
+
+
+    @GetMapping("/send/mail")
+    public ResponseEntity<BaseResponse> sendMail(HttpServletRequest request) throws MessagingException, UnsupportedEncodingException {
+        String subject = request.getParameter("subject");
+        String body = request.getParameter("body");
+        String to = request.getParameter("to");
+        String cc = request.getParameter("cc");
+        String bcc = request.getParameter("bcc");
+        String from = request.getParameter("from");
+
+        System.out.println("From: " + from + ", to: " + to + ", cc: " + cc + ", bcc: " + bcc + ", subject: " + subject);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("name","Rahul");
+        response.put("email","rahulakula2015@gmail.com");
+        response.put("phone","123456789");
+        mailService.sendMailTemplate(response,mailTemplate.welcomeEmail);
+
+        return ResponseEntity.ok(BaseResponse.builder()
+                .status(200)
+                .message("SUCCESS")
+                .data("")
+                .timestamp(Instant.now())
+                .build());
     }
 
 

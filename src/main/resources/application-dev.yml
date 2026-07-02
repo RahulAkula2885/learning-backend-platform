@@ -17,7 +17,7 @@ spring:
 
     # Database credentials (avoid hardcoding in production)
     username: root
-    password: ${DB_PASSWORD:password1}
+    password: ${DB_PASSWORD:password}
 
     # MySQL JDBC driver
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -99,6 +99,18 @@ spring:
             authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
             token-uri: https://oauth2.googleapis.com/token
             user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+
+  # =========================
+  # Redis cache
+  # =========================
+  cache:
+    type: redis
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+
 
 # =========================
 # AWS CONFIGURATION (S3 / SDK etc.)

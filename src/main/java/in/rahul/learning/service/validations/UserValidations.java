@@ -1,6 +1,8 @@
 package in.rahul.learning.service.validations;
 
+import com.google.common.hash.BloomFilter;
 import in.rahul.learning.exceptions.CustomException;
+import in.rahul.learning.filters.EmailBloomService;
 import in.rahul.learning.model.entity.User;
 import in.rahul.learning.model.enums.UserRole;
 import in.rahul.learning.model.request.LoginRequest;
@@ -27,6 +29,8 @@ public class UserValidations {
 
     private final IUserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final EmailBloomService emailBloomService;
+    private final BloomFilter<String> emailBloomFilter;
 
     public void checkCreateUserValidations(UserRequest request) {
         LOGGER.info("Received request to create user {}", request);
@@ -52,8 +56,16 @@ public class UserValidations {
         if (!isValidRole(request.role())) {
             throw new CustomException(INVALID_ROLE);
         }
-        if (userRepository.existsByEmail(request.email())) {
-            throw new CustomException(EMAIL_ALREADY_EXISTS);
+        // 1. Fast check (Bloom Filter)
+        if (!emailBloomService.mightExist(request.email())) {
+
+        //if (!emailBloomFilter.mightContain(request.email())) {
+            // fallback to DB (because Bloom can false-positive)
+            if (userRepository.existsByEmail(request.email())) {
+                throw new CustomException(EMAIL_ALREADY_EXISTS);
+            }
+        }else{
+            throw new CustomException(EMAIL_ALREADY_EXISTS + " bloom filter");
         }
     }
 

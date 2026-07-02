@@ -17,7 +17,30 @@ public class UserServiceCache {
 
     private final IUserRepository userRepository;
 
-    @CacheEvict(cacheNames = "users", allEntries = true)
+
+    @CacheEvict(cacheNames = {"users:all", "users:byId"}, allEntries = true)
+    public void saveUsers(User user) {
+        userRepository.save(user);
+    }
+
+    @CacheEvict(cacheNames = {"users:all", "users:byId"}, allEntries = true)
+    public User updateUsers(User user) {
+        return userRepository.save(user);
+    }
+
+    @Cacheable(cacheNames = "users:all")
+    public List<UserResponse> findAllUserDetails() {
+        return userRepository.findAllUsers();
+    }
+
+    @Cacheable(cacheNames = "users:byId", key = "#id")
+    public UserResponse getUserDetailsById(Long id) {
+        return userRepository.findById(id)
+                .map(this::mapToResponse)
+                .orElseThrow(() -> new CustomException("User not found"));
+    }
+
+    /*@CacheEvict(cacheNames = "users", allEntries = true)
     public void saveUsers(User user) {
         userRepository.save(user);
     }
@@ -27,14 +50,18 @@ public class UserServiceCache {
         return userRepository.save(user);
     }
 
+//    @Cacheable(value = "users", key = "'allUsers'")
+//    public List<UserResponse> findAllUsers() {
+//        return userRepository.findAllUsers();
+//    }
 
     @Cacheable(cacheNames = "users")
     public List<UserResponse> findAllUserDetails() {
         return userRepository.findAllUsers();
-       /* return userRepository.findAllByDeletedFalse()
+       *//* return userRepository.findAllByDeletedFalse()
                 .stream()
                 .map(this::mapToResponse)
-                .toList();*/
+                .toList();*//*
     }
 
     @Cacheable(cacheNames = "users", key = "#id")
@@ -43,7 +70,7 @@ public class UserServiceCache {
                 .orElseThrow(() -> new CustomException("User not found"));
 
         return mapToResponse(user);
-    }
+    }*/
 
     private UserResponse mapToResponse(User user) {
         return new UserResponse(

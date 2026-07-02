@@ -85,6 +85,22 @@ public class UserController {
         return userService.updateUser(request);
     }
 
+    @Operation(
+            summary = "Delete User",
+            description = "Deletes an existing user by request data (preferably userId)."
+    )
+    @PatchMapping("/delete")
+    public ResponseEntity<BaseResponse> deleteUser(
+            @RequestBody User request
+    ) {
+
+        // Log incoming delete request for debugging and audit trail
+        log.info("Received delete request for userId={}", request.getId());
+
+        // Delegate deletion logic to service layer
+        return userService.deleteUser(request);
+    }
+
     /**
      * Retrieves all active users.
      *

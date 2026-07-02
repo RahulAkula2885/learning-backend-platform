@@ -2,9 +2,10 @@ package in.rahul.learning.model.response;
 
 import in.rahul.learning.model.enums.UserRole;
 
+import java.io.Serializable;
 import java.time.Instant;
 
-public record UserResponse(
+public record UserResponse (
         Long id,
         String name,
         String email,
@@ -14,5 +15,5 @@ public record UserResponse(
         Boolean deleted,
         Instant createdTime,
         Instant modifiedTime
-) {
+)  {
 }

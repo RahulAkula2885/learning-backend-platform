@@ -5,6 +5,7 @@ import com.auth0.jwt.exceptions.TokenExpiredException;
 import in.rahul.learning.commons.BaseResponse;
 import jakarta.persistence.NoResultException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -80,6 +81,13 @@ public class GlobalExceptions {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<BaseResponse> handleInvalidEnum(
             HttpMessageNotReadableException ex) {
+
+        return createBaseResponse(INTERNAL_SERVER_ERROR, ex.getMessage());
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<BaseResponse> handleDataIntegrityViolationException(
+            DataIntegrityViolationException ex) {
 
         return createBaseResponse(INTERNAL_SERVER_ERROR, ex.getMessage());
     }
