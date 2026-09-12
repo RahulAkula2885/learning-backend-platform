@@ -2,10 +2,12 @@ package in.rahul.learning.model.response;
 
 import in.rahul.learning.model.enums.UserRole;
 
-import java.io.Serializable;
 import java.time.Instant;
 
-public record UserResponse (
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
+@JacksonXmlRootElement(localName = "user")
+public record UserResponse(
         Long id,
         String name,
         String email,
@@ -15,5 +17,5 @@ public record UserResponse (
         Boolean deleted,
         Instant createdTime,
         Instant modifiedTime
-)  {
+) {
 }

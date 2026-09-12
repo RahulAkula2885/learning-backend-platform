@@ -5,6 +5,7 @@ import in.rahul.learning.model.entity.User;
 import in.rahul.learning.model.request.LoginRequest;
 import in.rahul.learning.model.request.UserRequest;
 import in.rahul.learning.model.response.UserResponse;
+import in.rahul.learning.model.response.UserResponseXml;
 import in.rahul.learning.service.IUserService;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
@@ -12,6 +13,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -127,12 +129,20 @@ public class UserController {
      * @return User details
      */
     @Hidden
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_XML_VALUE)
     public UserResponse getUserById(@PathVariable Long id) {
 
         log.info("Fetching user details for id={}", id);
 
         return userService.getUserDetailsById(id);
+    }
+
+    @GetMapping(value = "/xml/{id}", produces = MediaType.APPLICATION_XML_VALUE)
+    public UserResponseXml getUserByIdXmlFormat(@PathVariable Long id) {
+
+        log.info("Fetching user details for id={}", id);
+
+        return userService.getUserByIdXmlFormat(id);
     }
 
     /**

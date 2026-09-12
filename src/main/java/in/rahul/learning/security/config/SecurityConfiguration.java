@@ -62,7 +62,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) {
 
         http
-                //.csrf(csrf -> csrf.disable())
+                //.csrf(csrf -> csrf.disable()) // CSRF attacks mainly exploit browser cookies that are automatically sent with requests.
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
                 .sessionManagement(session ->

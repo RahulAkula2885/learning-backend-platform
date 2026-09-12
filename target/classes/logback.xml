@@ -35,8 +35,8 @@
             <!-- Max file size before creating another file on same day -->
             <maxFileSize>50MB</maxFileSize>
 
-            <!-- Keep logs for 2 days -->
-            <maxHistory>2</maxHistory>
+            <!-- Keep logs for 10 days -->
+            <maxHistory>10</maxHistory>
 
             <!-- Total size cap -->
             <totalSizeCap>5GB</totalSizeCap>
@@ -71,7 +71,7 @@
             </fileNamePattern>
 
             <maxFileSize>20MB</maxFileSize>
-            <maxHistory>90</maxHistory>
+            <maxHistory>2</maxHistory>
             <totalSizeCap>2GB</totalSizeCap>
 
         </rollingPolicy>

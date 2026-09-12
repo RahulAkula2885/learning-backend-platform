@@ -11,6 +11,7 @@ import in.rahul.learning.model.entity.User;
 import in.rahul.learning.model.request.LoginRequest;
 import in.rahul.learning.model.request.UserRequest;
 import in.rahul.learning.model.response.UserResponse;
+import in.rahul.learning.model.response.UserResponseXml;
 import in.rahul.learning.repo.IUserRepository;
 import in.rahul.learning.security.jwt.JWTTokenProvider;
 import in.rahul.learning.security.model.UserPrinciple;
@@ -71,10 +72,10 @@ public class UserServiceImpl implements IUserService {
         userServiceCache.saveUsers(user);
 
         // 3. Update Bloom Filter with redis cache
-        emailBloomService.add(user.getEmail());
+        //emailBloomService.add(user.getEmail());
 
         //this is for bloom filter
-        //emailBloomFilter.put(user.getEmail());
+        emailBloomFilter.put(user.getEmail());
 
         UserPrinciple userPrinciple = new UserPrinciple(user, Set.of(user.getRole()));
         String token = jwtTokenProvider.generateJWTToken(userPrinciple);
@@ -186,6 +187,12 @@ public class UserServiceImpl implements IUserService {
                 .message(SUCCESS)
                 .timestamp(Instant.now())
                 .build());
+    }
+
+    @Override
+    public UserResponseXml getUserByIdXmlFormat(Long id) {
+        LOGGER.info("Received request to get user details by id {}", id);
+        return userServiceCache.getUserByIdXmlFormat(id);
     }
 
     private UserResponse mapToResponse(User user) {

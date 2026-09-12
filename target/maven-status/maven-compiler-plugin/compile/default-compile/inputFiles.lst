@@ -23,6 +23,7 @@
 /Users/rahul/coding-practice/java/learning/src/main/java/in/rahul/learning/model/request/ProductRequest.java
 /Users/rahul/coding-practice/java/learning/src/main/java/in/rahul/learning/model/request/UserRequest.java
 /Users/rahul/coding-practice/java/learning/src/main/java/in/rahul/learning/model/response/UserResponse.java
+/Users/rahul/coding-practice/java/learning/src/main/java/in/rahul/learning/model/response/UserResponseXml.java
 /Users/rahul/coding-practice/java/learning/src/main/java/in/rahul/learning/repo/IProductRepository.java
 /Users/rahul/coding-practice/java/learning/src/main/java/in/rahul/learning/repo/IUserRepository.java
 /Users/rahul/coding-practice/java/learning/src/main/java/in/rahul/learning/security/config/SecurityConfiguration.java

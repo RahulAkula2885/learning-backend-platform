@@ -57,9 +57,9 @@ public class UserValidations {
             throw new CustomException(INVALID_ROLE);
         }
         // 1. Fast check (Bloom Filter)
-        if (!emailBloomService.mightExist(request.email())) {
+        //if (!emailBloomService.mightExist(request.email())) {
 
-        //if (!emailBloomFilter.mightContain(request.email())) {
+        if (!emailBloomFilter.mightContain(request.email())) {
             // fallback to DB (because Bloom can false-positive)
             if (userRepository.existsByEmail(request.email())) {
                 throw new CustomException(EMAIL_ALREADY_EXISTS);

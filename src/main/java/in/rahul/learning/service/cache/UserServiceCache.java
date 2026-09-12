@@ -3,6 +3,7 @@ package in.rahul.learning.service.cache;
 import in.rahul.learning.exceptions.CustomException;
 import in.rahul.learning.model.entity.User;
 import in.rahul.learning.model.response.UserResponse;
+import in.rahul.learning.model.response.UserResponseXml;
 import in.rahul.learning.repo.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
@@ -10,6 +11,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -84,5 +86,24 @@ public class UserServiceCache {
                 user.getCreatedTime(),
                 user.getModifiedTime()
         );
+    }
+
+    public UserResponseXml getUserByIdXmlFormat(Long id) {
+
+        Optional<User> user = userRepository.findById(id);
+        if(user.isPresent()) {
+            return UserResponseXml.builder()
+                    .id(user.get().getId())
+                    .name(user.get().getName())
+                    .email(user.get().getEmail())
+                    .phoneNo(user.get().getPhoneNo())
+                    .active(user.get().getActive())
+                    .deleted(user.get().getDeleted())
+                    .createdTime(user.get().getCreatedTime())
+                    .modifiedTime(user.get().getModifiedTime())
+                    .build();
+        }else{
+            throw new CustomException("User not found");
+        }
     }
 }

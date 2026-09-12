@@ -2,6 +2,7 @@ in/rahul/learning/config/OpenApiConfig.class
 in/rahul/learning/security/filter/JwtAuthorizationFilterNew.class
 in/rahul/learning/repo/IUserRepository.class
 in/rahul/learning/exceptions/GlobalExceptions.class
+in/rahul/learning/model/response/UserResponseXml.class
 in/rahul/learning/repo/IProductRepository.class
 in/rahul/learning/service/IUserService.class
 in/rahul/learning/mail/service/MailService.class
@@ -42,3 +43,4 @@ in/rahul/learning/LearningApplication.class
 in/rahul/learning/BllomFilter.class
 in/rahul/learning/filters/EmailBloomService.class
 in/rahul/learning/service/IProductService.class
+in/rahul/learning/model/response/UserResponseXml$UserResponseXmlBuilder.class

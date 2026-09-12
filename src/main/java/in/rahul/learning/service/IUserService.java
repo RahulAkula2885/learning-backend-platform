@@ -5,6 +5,7 @@ import in.rahul.learning.model.entity.User;
 import in.rahul.learning.model.request.LoginRequest;
 import in.rahul.learning.model.request.UserRequest;
 import in.rahul.learning.model.response.UserResponse;
+import in.rahul.learning.model.response.UserResponseXml;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
@@ -22,4 +23,6 @@ public interface IUserService {
     ResponseEntity<BaseResponse> login(LoginRequest request);
 
     ResponseEntity<BaseResponse> deleteUser(User request);
+
+    UserResponseXml getUserByIdXmlFormat(Long id);
 }
