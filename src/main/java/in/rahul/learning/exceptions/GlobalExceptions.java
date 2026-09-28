@@ -6,6 +6,8 @@ import in.rahul.learning.commons.BaseResponse;
 import jakarta.persistence.NoResultException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.QueryTimeoutException;
+import org.springframework.data.redis.RedisConnectionFailureException;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -103,18 +105,29 @@ public class GlobalExceptions {
         return createBaseResponse(METHOD_NOT_ALLOWED, String.format(METHOD_IS_NOT_ALLOWED, supportedMethod));
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<BaseResponse> exception(Exception exception) {
-        log.error(exception.getMessage(), exception);
-        return createBaseResponse(INTERNAL_SERVER_ERROR, exception.getMessage());
+    @ExceptionHandler(QueryTimeoutException.class)
+    public ResponseEntity<BaseResponse> handleQueryTimeoutException(
+            QueryTimeoutException exception) {
+
+        log.error("Redis command timed out", exception);
+
+        return createBaseResponse(
+                REQUEST_TIMEOUT,
+                "Redis operation timed out"
+        );
     }
 
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<BaseResponse> runtimeException(RuntimeException exception) {
-        log.error(exception.getMessage(), exception);
-        return createBaseResponse(INTERNAL_SERVER_ERROR, exception.getMessage());
-    }
+    @ExceptionHandler(RedisConnectionFailureException.class)
+    public ResponseEntity<BaseResponse> handleRedisConnectionFailureException(
+            RedisConnectionFailureException exception) {
 
+        log.error("Redis connection failed", exception);
+
+        return createBaseResponse(
+                SERVICE_UNAVAILABLE,
+                "Redis service is unavailable"
+        );
+    }
 
     @ExceptionHandler(NoResultException.class)
     public ResponseEntity<BaseResponse> notFoundException(NoResultException exception) {
@@ -164,6 +177,18 @@ public class GlobalExceptions {
     @ExceptionHandler(NoResourceFoundException.class)
     public ResponseEntity<BaseResponse> noResourceFoundException(NoResourceFoundException internalServerException) {
         return createBaseResponse(INTERNAL_SERVER_ERROR, internalServerException.getMessage());
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<BaseResponse> exception(Exception exception) {
+        log.error(exception.getMessage(), exception);
+        return createBaseResponse(INTERNAL_SERVER_ERROR, exception.getMessage());
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<BaseResponse> runtimeException(RuntimeException exception) {
+        log.error(exception.getMessage(), exception);
+        return createBaseResponse(INTERNAL_SERVER_ERROR, exception.getMessage());
     }
 
     private ResponseEntity<BaseResponse> createBaseResponse(HttpStatus httpStatus, String message) {

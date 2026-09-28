@@ -19,28 +19,25 @@ public interface IdempotencyRepository
 
     @Modifying
     @Query(value = """
-    INSERT INTO idempotency_record
-    (
-        idempotency_key,
-        request_hash,
-        status,
-        created_at,
-        updated_at
-    )
-    VALUES
-    (
-        :key,
-        :hash,
-        'IN_PROGRESS',
-        CURRENT_TIMESTAMP,
-        CURRENT_TIMESTAMP
-    )
-    ON CONFLICT (idempotency_key)
-    DO NOTHING
-    """, nativeQuery = true)
+        INSERT IGNORE INTO idempotency_record
+        (
+            idempotency_key,
+            request_hash,
+            status,
+            created_at,
+            updated_at
+        )
+        VALUES
+        (
+            :key,
+            :hash,
+            'IN_PROGRESS',
+            CURRENT_TIMESTAMP,
+            CURRENT_TIMESTAMP
+        )
+        """, nativeQuery = true)
     int createIfAbsent(
             @Param("key") String key,
             @Param("hash") String hash
     );
 }
-
